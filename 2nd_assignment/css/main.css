@@ -1,0 +1,279 @@
+/* Reset some basic styles using normalize.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* Header and Footer */
+header, footer {
+  background: linear-gradient(to right, #30313f, #4b4c60);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+footer {
+  color: #FFF;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #333;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Aside (Sidebar) */
+/* Aside (Sidebar) */
+aside {
+  flex-basis: 20%;
+  position: relative;
+  background: url('../images/aside.jpg') no-repeat;
+  background-size: contain;
+  color: blueviolet;
+  padding: 20px;
+  margin: 20px 0;
+  /* width: 200px; /* Set the width to the desired square size */
+  /* height: 200px; Set the height to match the width for a square shape */
+  border-radius: 10px; /* Optional: adds rounded corners */
+}
+
+aside::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6); /* White overlay with 60% opacity */
+  z-index: 0; /* Ensure it sits behind the text */
+}
+
+aside * {
+  position: relative;
+  z-index: 1; /* Make sure content is above the overlay */
+}
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+aside ul li a {
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  color: black;
+  text-decoration: none;
+}
+
+aside ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main Content */
+main {
+  flex-grow: 1;
+  padding: 20px;
+  /* margin-left: 220px; */
+}
+
+/* Biography Page */
+.biography-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 20px 0;
+  shape-outside: circle();
+  float: left;
+  margin-right: 20px;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #4e54c8;
+  color: white;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.gallery img {
+  width: 100%;
+  height: 80%;
+  border-radius: 8px;
+  transition: transform 0.3s;
+  clip-path: polygon(12.62% 4.3%, 13.32% 75.97%, 50.63% 95.55%, 86.95% 70.42%, 85.93% 0.47%);
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Contact Form */
+form {
+  max-width: 600px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #4e54c8;
+  outline: none;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
+
+button:hover {
+  background-color: #8f94fb;
+}
+
+/* Form Validation */
+input:invalid, select:invalid, textarea:invalid {
+  border: 1px solid red;
+}
+
+/* Media Page - Video */
+iframe {
+  max-width: 100%;
+  border: 2px solid #4e54c8;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    margin: 0 20px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  form {
+    max-width: 100%;
+  }
+
+  aside {
+    display: none; /* Hide sidebar on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+}
+
+/* Accessibility Improvements */
+img {
+  alt: "Charles Babbage Image";
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+/* Search Engine Optimization and Accessibility */
+a:focus, button:focus {
+  outline: 3px solid #ffbf00;
+  outline-offset: 2px;
+}
+
+section{
+  display: flex;
+}
